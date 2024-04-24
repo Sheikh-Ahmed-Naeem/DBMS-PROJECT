@@ -8,8 +8,8 @@ This is our 4th semester database project showcasing a full-stack application.
   * Hassaan Ali Bukhari
 
     
-Project ststs:
+Project stats:
 
- * Front-end => HTML,CSS
+ * Front-end => Python Tkinter
  * Backend => Python
  * Database => MySQL
