@@ -9,7 +9,7 @@ CREATE TABLE Football (
     Description TEXT,
     Picture VARCHAR(255)
 );
-CREATE TABLE IF NOT EXISTS Football_Maker (
+CREATE TABLE Football_Maker (
     M_ID INT AUTO_INCREMENT PRIMARY KEY,
     M_name VARCHAR(255),
     Address TEXT,
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Football_Maker (
     Contact_no VARCHAR(15),
     Picture VARCHAR(255)
 );
-CREATE TABLE IF NOT EXISTS Football_Order_History (
+CREATE TABLE Football_Order_History (
     P_ID INT,
     M_ID INT,
     Total_Quantity INT,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS Football_Order_History (
     FOREIGN KEY (M_ID) REFERENCES Football_Maker (M_ID)
 );
 --------------------------------------------------------------------------------------------------------------
-CREATE TABLE IF NOT EXISTS Gloves (
+CREATE TABLE Gloves (
     P_ID INT AUTO_INCREMENT PRIMARY KEY,
     P_name VARCHAR(255),
     Size VARCHAR(50),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS Gloves (
     Description TEXT,
     Picture VARCHAR(255)
 );
-CREATE TABLE IF NOT EXISTS Gloves_Maker (
+CREATE TABLE Gloves_Maker (
     M_ID INT AUTO_INCREMENT PRIMARY KEY,
     M_name VARCHAR(255),
     Address TEXT,
@@ -46,5 +46,15 @@ CREATE TABLE IF NOT EXISTS Gloves_Maker (
     Contact_no VARCHAR(15),
     Picture VARCHAR(255)
 );
-
+CREATE Gloves_Order_History (
+    P_ID INT,
+    M_ID INT,
+    Total_Quantity INT,
+    Quantity_Delivered INT,
+    Quantity_Pending INT GENERATED ALWAYS AS (Total_Quantity - Quantity_Delivered) VIRTUAL,
+    Price_Per_Item DECIMAL(10,2),
+    Total_Price DECIMAL(10,2) GENERATED ALWAYS AS (Quantity_Delivered * Price_Per_Item) VIRTUAL,
+    FOREIGN KEY (P_ID) REFERENCES Gloves (P_ID),
+    FOREIGN KEY (M_ID) REFERENCES Gloves_Maker (M_ID)
+);
 
