@@ -1,5 +1,5 @@
 --Making tables using sql--
-
+-- First three tables are for Football data--
 CREATE DATABASE Ambassador_Sports;
 USE Ambassador_Sports;
 CREATE TABLE Football (
@@ -31,6 +31,7 @@ CREATE TABLE Football_Order_History (
     FOREIGN KEY (M_ID) REFERENCES Football_Maker (M_ID)
 );
 --------------------------------------------------------------------------------------------------------------
+-- Last three tables are used for Gloves--
 CREATE TABLE Gloves (
     P_ID INT AUTO_INCREMENT PRIMARY KEY,
     P_name VARCHAR(255),
