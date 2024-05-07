@@ -1,3 +1,5 @@
+--Making tables using sql--
+
 CREATE DATABASE Ambassador_Sports;
 USE Ambassador_Sports;
 CREATE TABLE Football (
