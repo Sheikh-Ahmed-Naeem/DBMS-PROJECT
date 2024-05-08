@@ -2,12 +2,38 @@
 <html lang="en-US">
   <head>
     <title>DBMS Project</title>
+    <style>
+      h1{
+        text-align : center;
+      }
+      #banner{
+        width: 100%;
+        heigh: 360px;        
+        object-fit: cover;
+      }
+
+      #container{
+        max-width: 720px;
+        margin: 0 auto 0 auto;
+      }
+
+      #button_container{
+        position: absolute;
+        top: 20px;
+        right:  310px;
+      }
+
+    </style>
   </head>
   <body>
-    <button>Signin </button>
-    <button>Signup </button>
-    <button>Home </button>
-    <h1>Welcome to the DBMS Project</h1>
-    <img src="https://5725d0fc-f687-4677-87d0-3b88c75a714b-00-1gnxbjbta8lsm.worf.replit.dev/static/banner.png" height="500">
+    <div id="container">
+      <button>Home </button>
+      <div id= "button_container">
+        <button>Signin </button>
+        <button>Signup </button>
+      </div>
+      <h1>Welcome to the DBMS Project</h1>
+      <img id="banner" src="https://5725d0fc-f687-4677-87d0-3b88c75a714b-00-1gnxbjbta8lsm.worf.replit.dev/static/banner.png" height="500">
+      </div>
   </body>
-</html>
+</html>  
