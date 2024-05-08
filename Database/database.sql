@@ -1,3 +1,4 @@
+
 CREATE DATABASE Ambassador_Sports;
 USE Ambassador_Sports;
 
@@ -36,8 +37,8 @@ CREATE TABLE Football_Order_History (
 );
 
 --------------------------------------------------------------------------------------------------------------
+ -- tables are used for Gloves--
 
--- table for Cloves
 CREATE TABLE Gloves (
     P_ID INT AUTO_INCREMENT PRIMARY KEY,
     P_name VARCHAR(255),
