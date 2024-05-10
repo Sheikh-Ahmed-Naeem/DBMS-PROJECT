@@ -30,6 +30,9 @@ CREATE TABLE Football_Order_History (
     Total_Price DECIMAL(10,2) GENERATED ALWAYS AS (Quantity_Delivered * Price_Per_Item) STORED
 );
 
+
+--------------------------------------------------------------------------------------------------------------
+
 -- Tables for Gloves
 CREATE TABLE Gloves (
     P_ID SERIAL PRIMARY KEY,
