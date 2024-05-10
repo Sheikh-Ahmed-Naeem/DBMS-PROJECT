@@ -3,10 +3,47 @@
 <head>
 <title>Order History</title>
 <style>
-    .gear-icon-container {
-        position: relative;
-        display: inline-block;
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e0e0e0;
+        margin: 20px;
     }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #209cee;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #f4f4f4;
+    }
+
+    .gear-icon-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
     .options {
         position: absolute;
         top: 100%;
@@ -21,84 +58,88 @@
         opacity: 0;
         transition: visibility 0s, opacity 0.3s linear;
     }
+
     .gear-icon-container:hover .options {
         visibility: visible;
         opacity: 1;
     }
+
     .options a {
         display: block;
         padding: 5px 0;
         color: #333;
         text-decoration: none;
     }
+
     .options a:hover {
         background-color: #f4f4f4;
     }
+
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #888;
+    }
 </style>
 </head>
-<body style="background-color: #e0e0e0; font-family: Arial, sans-serif; margin: 20px; position: relative;">
-
-  <!-- Gear option -->
-  <div style="position: absolute; top: 50px; right: 6px;">
+<body>
+<div class="container">
     <div class="gear-icon-container">
-      <img src="threedot.jpg" alt="Settings" style="width: 50px; height: 50px;">
-      <div class="options">
-        <a href="#" class="add-option">Add</a>
-        <a href="delete_order_history.html" class="delete-option">Delete</a>
-      </div>
+        <img src="threedot.jpg" alt="Settings" style="width: 50px; height: 50px;">
+        <div class="options">
+            <a href="#" class="add-option">Add</a>
+            <a href="delete_order_history.html" class="delete-option">Delete</a>
+        </div>
     </div>
-  </div>
-  
 
+    <table>
+        <tr>
+            <th colspan="7">
+                <h1 style="margin: 0; text-align: center;">AMBASSADOR SPORTS</h1>
+                <h3 style="margin: 5px 0 0; font-size: 16px; text-align: center;">Order History</h3>
+            </th>
+        </tr>
+        <tr>
+            <th>Maker Name</th>
+            <th>Product ID</th>
+            <th>Quantity</th>
+            <th>Product Delivered</th>
+            <th>Product Pending</th>
+            <th>Price Per Item</th>
+            <th>Total Price</th>
+        </tr>
+        <tr>
+            <td>Ahmed Naeem</td>
+            <td>10001</td>
+            <td>100</td>
+            <td>50</td>
+            <td>50</td>
+            <td>$10.00</td>
+            <td>$10.00</td>
+        </tr>
+        <tr>
+            <td>Ahmed Naeem</td>
+            <td>10001</td>
+            <td>100</td>
+            <td>50</td>
+            <td>50</td>
+            <td>$10.00</td>
+            <td>$10.00</td>
+        </tr>
+        <tr>
+            <td>Ahmed Naeem</td>
+            <td>10001</td>
+            <td>100</td>
+            <td>50</td>
+            <td>50</td>
+            <td>$10.00</td>
+            <td>$10.00</td>
+        </tr>
+    </table>
 
-  <table style="width: 100%; background-color: white; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-    <tr>
-      <th colspan="7" style="background-color: #209cee; color: white; text-align: center; padding: 15px;">
-        <h1 style="margin: 0;">AMBASSADOR SPORTS</h1>
-        <h3 style="margin: 5px 0 0; font-size: 16px;">Data Management System</h3>
-      </th>
-    </tr>
-    <tr>
-      <th colspan="7" style="text-align: center; padding: 15px; font-size: 18px; color: #209cee;">Order History</th>
-    </tr>
-    <tr>
-      <th style="text-align: left; padding: 10px;">Maker Name</th>
-      <th style="text-align: left; padding: 10px;">Product ID</th>
-      <th style="text-align: left; padding: 10px;">Quantity</th>
-      <th style="text-align: left; padding: 10px;">Product Delivered</th>
-      <th style="text-align: left; padding: 10px;">Product Pending</th>
-      <th style="text-align: left; padding: 10px;">Price Per Item</th>
-      <th style="text-align: left; padding: 10px;">Total Price</th>
-    </tr>
-    <tr>
-      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">Ahmed Naeem</td>
-      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">10001</td>
-      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">100</td>
-      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
-      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
-      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
-      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
-    </tr>
-    <tr>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">Ahmed Naeem</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">10001</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">100</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
-    </tr>
-    <tr>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">Ahmed Naeem</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">10001</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">100</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
-        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
-    </tr>
-  </table>
-  <div style="text-align: center; margin-top: 20px;">
-    <p style="color: #888;">AMBASSADOR SPORTS &copy; 2024. All Rights Reserved.</p>
+    <div class="footer">
+        <p>&copy; 2024 AMBASSADOR SPORTS. All Rights Reserved.</p>
+    </div>
+</div>
 </body>
 </html>
