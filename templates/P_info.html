@@ -2,59 +2,103 @@
 <html>
 <head>
 <title>Product Details</title>
+<style>
+    /* General Styles */
+    body {
+        background-color: #e0e0e0;
+        margin: 20px;
+        font-family: Arial, sans-serif;
+    }
+    /* Table Styles */
+    table {
+        width: 100%;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    th {
+        background-color: #209cee;
+        color: white;
+        text-align: center;
+        padding: 15px;
+    }
+    td {
+        padding: 10px;
+    }
+    input[type="text"] {
+        width: calc(100% - 22px); /* Adjusted width */
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    /* Button Styles */
+    button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #007bff; /* Hover color */
+    }
+
+    /* Footer Styles */
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #888;
+    }
+</style>
 </head>
-<body style="background-color: #e0e0e0; margin: 20px;">
-  <table style="width: 100%; background-color: white; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+<body>
+
+  <table>
     <tr>
-      <th colspan="2" style="background-color: #209cee; color: white; text-align: center; padding: 15px;">
-        <h1 style="margin: 0;">AMBASSADOR SPORTS</h1>
-        <h3 style="margin: 5px 0 0; font-size: 16px;">Data Management System</h3>
+      <th colspan="2">
+        <h1>AMBASSADOR SPORTS</h1>
+        <h3>Data Management System</h3>
       </th>
     </tr>
     <tr>
-      <th colspan="2" style="text-align: center; padding: 15px; font-size: 20px; color: #209cee;">
+      <th colspan="2" style="font-size: 20px;">
         Product Details
       </th>
     </tr>
     <tr>
-      <td style="padding: 10px;">Product:</td>
-      <td style="padding: 10px;">
-        <input type="text" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
-      </td>
+      <td>Product:</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td style="padding: 10px;">Product ID:</td>
-      <td style="padding: 10px;">
-        <input type="text" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
-      </td>
+      <td>Product ID:</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td style="padding: 10px;">Maker:</td>
-      <td style="padding: 10px;">
-        <input type="text" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
-      </td>
+      <td>Maker:</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td style="padding: 10px;">Material:</td>
-      <td style="padding: 10px;">
-        <input type="text" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
-      </td>
+      <td>Material:</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td style="padding: 10px;">Colour:</td>
-      <td style="padding: 10px;">
-        <input type="text" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
-      </td>
+      <td>Colour:</td>
+      <td><input type="text"></td>
     </tr>
     <tr>
-      <td colspan="2" style="text-align: center; padding: 10px;">
-        <button style="background-color: #209cee; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer;">
-          Save
-        </button>
+      <td colspan="2" style="text-align: center;">
+        <button>Save</button>
       </td>
     </tr>
   </table>
-  <div style="text-align: center; margin-top: 20px;">
-    <p style="color: #888;">AMBASSADOR SPORTS &copy; 2024. All Rights Reserved.</p>
+
+  <div class="footer">
+    <p>AMBASSADOR SPORTS &copy; 2024. All Rights Reserved.</p>
+  </div>
 </body>
 </html>
