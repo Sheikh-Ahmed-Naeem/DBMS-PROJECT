@@ -82,3 +82,14 @@ $$ LANGUAGE plpgsql;
 
 SELECT authenticate_user('user 1', '12345');
 select * from users;
+
+
+--inserting some demo data--
+INSERT INTO gloves(p_id,p_name,size,material,colour,description) Values (10001,'Working Gloves','L','Soft','Yellow','No Description');
+INSERT INTO gloves_maker(m_id,m_name,address,cnic,contact_no) Values (30001,'Ahmed Naeem','House # 274','121323',03203002900);
+INSERT INTO gloves_order_history(p_id,m_id,total_quantity,quantity_delivered,price_per_item) VALUES (10001,20001,100,50, 10);
+
+SELECT * FROM gloves_order_history;
+SELECT * FROM gloves_maker;
+SELECT * FROM gloves;
+
