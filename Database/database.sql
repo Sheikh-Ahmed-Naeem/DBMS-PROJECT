@@ -28,7 +28,9 @@ CREATE TABLE Football_Order_History (
     FOREIGN KEY (P_ID) REFERENCES Football (P_ID),
     FOREIGN KEY (M_ID) REFERENCES Football_Maker (M_ID)
 );
+
 --------------------------------------------------------------------------------------------------------------
+
 CREATE TABLE Gloves (
     P_ID INT AUTO_INCREMENT PRIMARY KEY,
     P_name VARCHAR(255),
