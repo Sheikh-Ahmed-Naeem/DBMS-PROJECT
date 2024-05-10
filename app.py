@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
+import psycopg2
+from config import config
 
 app = Flask(__name__)
 
