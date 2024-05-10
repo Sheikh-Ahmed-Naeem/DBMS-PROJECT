@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order History</title>
+<style>
+    .gear-icon-container {
+        position: relative;
+        display: inline-block;
+    }
+    .options {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s linear;
+    }
+    .gear-icon-container:hover .options {
+        visibility: visible;
+        opacity: 1;
+    }
+    .options a {
+        display: block;
+        padding: 5px 0;
+        color: #333;
+        text-decoration: none;
+    }
+    .options a:hover {
+        background-color: #f4f4f4;
+    }
+    button {
+ width: 150px;
+ height: 50px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ background: #209cee;
+ border: none;
+ border-radius: 5px;
+ box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+ background: #209cee;
+}
+
+button, button span {
+ transition: 200ms;
+}
+
+button .text {
+ transform: translateX(35px);
+ color: white;
+ font-weight: bold;
+}
+
+button .icon {
+ position: absolute;
+ border-left: 1px solid #209cee;
+ transform: translateX(110px);
+ height: 40px;
+ width: 40px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+button svg {
+ width: 15px;
+ fill: #eee;
+}
+
+button:hover {
+ background: #209cee;
+}
+
+button:hover .text {
+ color: transparent;
+}
+
+button:hover .icon {
+ width: 150px;
+ border-left: none;
+ transform: translateX(0);
+}
+
+button:focus {
+ outline: none;
+}
+
+button:active .icon svg {
+ transform: scale(0.8);
+}
+</style>
+</head>
+<body style="background-color: #e0e0e0; font-family: Arial, sans-serif; margin: 20px; position: relative;">
+
+  <!-- Gear option -->
+  <div style="position: absolute; top: 50px; right: 6px;">
+    <div class="gear-icon-container">
+      <img src="threedot.jpg" alt="Settings" style="width: 50px; height: 50px;">
+      <div class="options">
+        <a href="#" class="add-option">Add</a>
+        <a href="#" class="delete-option">Delete</a>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <table style="width: 100%; background-color: white; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+    <tr>
+      <th colspan="9" style="background-color: #209cee; color: white; text-align: center; padding: 15px;">
+        <h1 style="margin: 0;">AMBASSADOR SPORTS</h1>
+        <h3 style="margin: 5px 0 0; font-size: 16px;">Data Management System</h3>
+      </th>
+    </tr>
+    <tr>
+      <th colspan="9" style="text-align: center; padding: 15px; font-size: 18px; color: #209cee;">Order History</th>
+    </tr>
+    <tr>
+      <th style="text-align: left; padding: 10px;">Maker Name</th>
+      <th style="text-align: left; padding: 10px;">Product ID</th>
+      <th style="text-align: left; padding: 10px;">Quantity</th>
+      <th style="text-align: left; padding: 10px;">Product Delivered</th>
+      <th style="text-align: left; padding: 10px;">Product Pending</th>
+      <th style="text-align: left; padding: 10px;">Price Per Item</th>
+      <th style="text-align: left; padding: 10px;">Total Price</th>
+    </tr>
+    <tr>
+      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">Ahmed Naeem</td>
+      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">10001</td>
+      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">100</td>
+      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
+      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
+      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
+      <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
+      <td><button class="noselect"><span class="text">Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button></td>
+    </tr>
+    <tr>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">Ahmed Naeem</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">10001</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">100</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
+        <td><button class="noselect"><span class="text">Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button></td>
+      </tr>
+      <tr>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">Ahmed Naeem</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">10001</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">100</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">50</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
+        <td style="text-align: left; padding: 10px; border-bottom: 1px solid #ccc;">$10.00</td>
+        <td><button class="noselect"><span class="text">Delete</span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path></svg></span></button></td>
+      </tr>
+    <!-- Add similar rows for each data entry -->
+  </table>
+  <div style="text-align: center; margin-top: 20px;">
+    <p style="color: #888;">AMBASSADOR SPORTS &copy; 2024. All Rights Reserved.</p>
+</body>
+</html>
