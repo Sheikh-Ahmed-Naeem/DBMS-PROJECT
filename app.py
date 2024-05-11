@@ -132,6 +132,18 @@ def gloves_products():
     return render_template('Gloves_product_window.html',products=data)
 
 
+@app.route('/Add_Product.html')
+def add_product():
+    # Render the Add_Product.html template
+    return render_template('Add_Product.html')
+
+
+@app.route('/Delete_Product.html')
+def delete_product():
+    # Render the Delete_Product.html template
+    return render_template('Delete_Product.html')
+
+
 @app.route('/gloves/makers')
 def gloves_makers():
     data = fetch_data()
