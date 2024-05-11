@@ -112,16 +112,6 @@ button:hover {
       <td style="padding: 10px;">
         <input type="text" placeholder="Search">
       </td>
-      <!-- <td></td>
-      <td style="padding: 10px; text-align: right;">
-        <div class="gear-icon-container">
-            <img src="ellipsis.png" alt="Gear Icon" width="30">
-            <div class="options">
-                <a href="P_info.html">Add</a>
-                <a href="G_Product_del.html">Delete</a>
-            </div>
-        </div>
-      </td> -->
     </tr>
     <tr>
       <th>Product Id</th>
@@ -131,9 +121,9 @@ button:hover {
 
     {% for product in Gloves %}
     <tr>
-        <td>{{ product.p_name }}</td>
-        <td>{{ product.size }}</td>
-        <td>{{ product.material }}</td>
+        <td>{{ product[0] }}</td>
+        <td>{{ product[1] }}</td>
+        <td>{{ product[2] }}</td>
         <td>
             <form action="/delete_item" method="post">
                 <input type="hidden" name="delete_item" value="{{ product.p_id }}">
