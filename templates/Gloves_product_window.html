@@ -107,20 +107,13 @@
       </td>
     </tr>
     <tr>
-      <th>Product Id</th>
-      <th>Product Name</th>
-      <th>Size</th>
-    </tr>
+     {% for product in products %}
     <tr>
-      <td>10001</td>
-      <td>Motor-Bike Globe</td>
-      <td>L</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.unit_address }}</td>
+      <td>{{ product.contact_no }}</td>
     </tr>
-    <tr>
-      <td>10002</td>
-      <td>Keeping-Gloves</td>
-      <td>XL</td>
-    </tr>
+    {% endfor %}
   </table>
 
   <div class="footer">
