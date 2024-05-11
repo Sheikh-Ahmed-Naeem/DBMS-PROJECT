@@ -47,6 +47,40 @@ def check_credentials(username, password):
         return False
 
 
+def fetch_data_Gloves():
+    try:
+        # Get database connection settings from database.ini
+        params = config()
+
+        # Connect to the database
+        conn = psycopg2.connect(**params)
+
+        cursor = conn.cursor()
+
+        # Query the database to fetch all rows from the Gloves_Maker table
+        cursor.execute("SELECT * FROM Gloves")
+
+        # Fetch all rows and store them in a list of dictionaries
+        products = []
+        for row in cursor.fetchall():
+            maker = {
+                'name': row[0], 
+                'unit_address': row[1],  
+                'contact_no': row[2] 
+            }
+            products.append(maker)
+
+        # Close database connection
+        cursor.close()
+        conn.close()
+
+        return products
+
+    except (Exception, psycopg2.DatabaseError) as e:
+        print("Error connecting to the database:", e)
+        return None
+
+
 def fetch_data():
     try:
         # Get database connection settings from database.ini
@@ -94,7 +128,8 @@ def button_click():
 
 @app.route('/gloves/products')
 def gloves_products():
-    return render_template('Gloves_product_window.html')
+    data = fetch_data_Gloves()
+    return render_template('Gloves_product_window.html',products=data)
 
 
 @app.route('/gloves/makers')
