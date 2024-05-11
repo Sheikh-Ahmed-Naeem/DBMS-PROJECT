@@ -100,14 +100,19 @@
         <div class="gear-icon-container">
             <img src="ellipsis.png" alt="Gear Icon" width="30">
             <div class="options">
-                <a href="P_info.html">Add</a>
-                <a href="G_Product_del.html">Delete</a>
+                <p><a href="{{ '/Add_Product.html' }}" class="button">ADD</a></p>
+                <p><a href="{{ '/Delete_Product.html' }}" class="button">DELETE</a></p>
             </div>
         </div>
       </td>
     </tr>
     <tr>
-     {% for product in products %}
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Size</th>
+    </tr>
+    <tr>
+      {% for product in products %}
     <tr>
       <td>{{ product.name }}</td>
       <td>{{ product.unit_address }}</td>
