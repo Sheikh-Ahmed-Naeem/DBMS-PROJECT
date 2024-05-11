@@ -58,6 +58,37 @@ def button_click():
         return "Invalid credentials.", 400
 
 
+@app.route('/gloves/products')
+def gloves_products():
+    return render_template('Gloves_product_window.html')
+
+
+@app.route('/gloves/makers')
+def gloves_makers():
+    return render_template('G_maker_window.html')
+
+
+@app.route('/order_history')
+def order_history():
+    return render_template('order_history.html')
+
+
+@app.route('/football/products')
+def football_products():
+    return render_template('products_page.html')
+
+
+@app.route('/football/makers')
+def football_makers():
+    return render_template('makers_page.html')
+
+
+@app.route('/football/order_history')
+def football_order_history():
+    return render_template('order_history_page.html')
+
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
     connect()
