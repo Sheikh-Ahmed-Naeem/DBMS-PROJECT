@@ -65,9 +65,9 @@ def fetch_data_Gloves():
         products = []
         for row in cursor.fetchall():
             maker = {
-                'name': row[0],  # Replace 0 with the index of the 'name' column in your database table
-                'unit_address': row[1],  # Replace 1 with the index of the 'unit_address' column
-                'contact_no': row[2]  # Replace 2 with the index of the 'contact_no' column
+                'name': row[0], 
+                'unit_address': row[1],  
+                'contact_no': row[2] 
             }
             products.append(maker)
 
@@ -94,14 +94,12 @@ def fetch_data():
 
         # Query the database to fetch all rows from the Gloves_Maker table
         cursor.execute("SELECT * FROM Gloves_Maker")
-
-        # Fetch all rows and store them in a list of dictionaries
         makers = []
         for row in cursor.fetchall():
             maker = {
-                'name': row[1],  # Replace 0 with the index of the 'name' column in your database table
-                'unit_address': row[2],  # Replace 1 with the index of the 'unit_address' column
-                'contact_no': row[4]  # Replace 2 with the index of the 'contact_no' column
+                'name': row[1], 
+                'unit_address': row[2],  
+                'contact_no': row[4]  
             }
             makers.append(maker)
 
@@ -128,22 +126,12 @@ def product_fetch_data():
 
         # Query the database to fetch all rows from the Gloves_Maker table
         cursor.execute("SELECT * FROM Gloves")
-
-        # Fetch all rows and store them in a list of dictionaries
-        makers = []
-        for row in cursor.fetchall():
-            maker = {
-                'name': row[0],  # Replace 0 with the index of the 'name' column in your database table
-                'unit_address': row[1],  # Replace 1 with the index of the 'unit_address' column
-                'contact_no': row[2]  # Replace 2 with the index of the 'contact_no' column
-            }
-            makers.append(maker)
-
-        # Close database connection
+        details = cursor.fetchall()
         cursor.close()
         conn.close()
-
-        return makers
+        
+        print(details[0])
+        return details
 
     except (Exception, psycopg2.DatabaseError) as e:
         print("Error connecting to the database:", e)
@@ -152,10 +140,7 @@ def product_fetch_data():
 
 def insert_product(product_name, size, material, colour, description):
     try:
-        # Get database connection settings from database.ini
         params = config()
-
-        # Connect to the database
         conn = psycopg2.connect(**params)
 
         cursor = conn.cursor()
@@ -172,17 +157,11 @@ def insert_product(product_name, size, material, colour, description):
 # Function to delete an item from the database
 def delete_item_from_database(item_id):
     try:
-        # Get database connection settings from database.ini
         params = config()
-
-        # Connect to the database
         conn = psycopg2.connect(**params)
 
         cursor = conn.cursor()
-        # Execute the DELETE statement
         cursor.execute("DELETE FROM Gloves WHERE P_ID = %s", (item_id,))
-
-        # Commit the transaction
         conn.commit()
 
     except (Exception, psycopg2.DatabaseError) as e:
@@ -211,7 +190,6 @@ def gloves_products():
 
 @app.route('/Add_Product.html')
 def add_product():
-    # Render the Add_Product.html template
     return render_template('Add_Product.html')
 
 
@@ -225,10 +203,8 @@ def save_product():
         material = request.form['material']
         colour = request.form['colour']
 
-        # Insert data into the database
         insert_product(product_name, product_id, maker, material, colour)
 
-        # Redirect to the Gloves_Product_window.html file
         return redirect(url_for('gloves_products'))
 
 
@@ -247,9 +223,6 @@ def delete_item():
         return redirect(url_for('gloves_products'))  # Redirect to the Gloves_product_window.html page
 
 
-
-
-
 @app.route('/gloves/makers')
 def gloves_makers():
     data = fetch_data()
@@ -258,22 +231,9 @@ def gloves_makers():
 
 @app.route('/order_history')
 def order_history():
-    return render_template('order_history.html')
+    data = fetch_order_history_data()  
+    return render_template('Gloves_Order_History.html', order_history_data=data)
 
-
-@app.route('/football/products')
-def football_products():
-    return render_template('products_page.html')
-
-
-@app.route('/football/makers')
-def football_makers():
-    return render_template('makers_page.html')
-
-
-@app.route('/football/order_history')
-def football_order_history():
-    return render_template('order_history_page.html')
 
 
 if __name__ == "__main__":
