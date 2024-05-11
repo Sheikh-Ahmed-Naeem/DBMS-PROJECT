@@ -128,19 +128,20 @@ button:hover {
       <th>Product Name</th>
       <th>Size</th>
     </tr>
-    <tr>
-      <td>10001</td>
-      <td>Motor-Bike Globe</td>
-      <td>L</td>
-      <td><button>Delete</button></td>
 
-    </tr>
+    {% for product in Gloves %}
     <tr>
-      <td>10002</td>
-      <td>Keeping-Gloves</td>
-      <td>XL</td>
-      <td><button>Delete</button></td>
+        <td>{{ product.p_name }}</td>
+        <td>{{ product.size }}</td>
+        <td>{{ product.material }}</td>
+        <td>
+            <form action="/delete_item" method="post">
+                <input type="hidden" name="delete_item" value="{{ product.p_id }}">
+                <button type="submit" >Delete</button>
+            </form>
+        </td>
     </tr>
+    {% endfor %}
   </table>
 
   <div class="footer">
