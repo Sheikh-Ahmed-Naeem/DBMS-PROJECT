@@ -10,6 +10,6 @@ This is our 4th semester database project showcasing a full-stack application.
     
 Project stats:
 
- * Front-end => Python Flask (Hassaan Bukhari)
- * Backend => Python (Ahmed Naeem)
- * Database => MySQL (Ammaid Sahu)
+ * Front-end => HTML, CSS (Ahmed Naeem)
+ * Backend => Python Flask (Hassaan Bukhari)
+ * Database => PostgesSQL (Ammaid Sahu)
