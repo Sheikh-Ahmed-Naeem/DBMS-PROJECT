@@ -100,8 +100,8 @@
         <div class="gear-icon-container">
             <img src="ellipsis.png" alt="Gear Icon" width="30">
             <div class="options">
-                <a href="P_info.html">Add</a>
-                <a href="G_Product_del.html">Delete</a>
+                <p><a href="{{ '/Add_Product.html' }}" class="button">ADD</a></p>
+                <p><a href="{{ '/Delete_Product.html' }}" class="button">DELETE</a></p>
             </div>
         </div>
       </td>
@@ -112,15 +112,13 @@
       <th>Size</th>
     </tr>
     <tr>
-      <td>10001</td>
-      <td>Motor-Bike Globe</td>
-      <td>L</td>
-    </tr>
+      {% for product in products %}
     <tr>
-      <td>10002</td>
-      <td>Keeping-Gloves</td>
-      <td>XL</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.unit_address }}</td>
+      <td>{{ product.contact_no }}</td>
     </tr>
+    {% endfor %}
   </table>
 
   <div class="footer">

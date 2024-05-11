@@ -47,6 +47,74 @@ def check_credentials(username, password):
         return False
 
 
+def fetch_data_Gloves():
+    try:
+        # Get database connection settings from database.ini
+        params = config()
+
+        # Connect to the database
+        conn = psycopg2.connect(**params)
+
+        cursor = conn.cursor()
+
+        # Query the database to fetch all rows from the Gloves_Maker table
+        cursor.execute("SELECT * FROM Gloves")
+
+        # Fetch all rows and store them in a list of dictionaries
+        products = []
+        for row in cursor.fetchall():
+            maker = {
+                'name': row[0], 
+                'unit_address': row[1],  
+                'contact_no': row[2] 
+            }
+            products.append(maker)
+
+        # Close database connection
+        cursor.close()
+        conn.close()
+
+        return products
+
+    except (Exception, psycopg2.DatabaseError) as e:
+        print("Error connecting to the database:", e)
+        return None
+
+
+def fetch_data():
+    try:
+        # Get database connection settings from database.ini
+        params = config()
+
+        # Connect to the database
+        conn = psycopg2.connect(**params)
+
+        cursor = conn.cursor()
+
+        # Query the database to fetch all rows from the Gloves_Maker table
+        cursor.execute("SELECT * FROM Gloves_Maker")
+
+        # Fetch all rows and store them in a list of dictionaries
+        makers = []
+        for row in cursor.fetchall():
+            maker = {
+                'name': row[1], 
+                'unit_address': row[2], 
+                'contact_no': row[4] 
+            }
+            makers.append(maker)
+
+        # Close database connection
+        cursor.close()
+        conn.close()
+
+        return makers
+
+    except (Exception, psycopg2.DatabaseError) as e:
+        print("Error connecting to the database:", e)
+        return None
+
+
 @app.route('/Home_Page', methods=['POST'])
 def button_click():
     username = request.form['u']
@@ -60,12 +128,26 @@ def button_click():
 
 @app.route('/gloves/products')
 def gloves_products():
-    return render_template('Gloves_product_window.html')
+    data = fetch_data_Gloves()
+    return render_template('Gloves_product_window.html',products=data)
+
+
+@app.route('/Add_Product.html')
+def add_product():
+    # Render the Add_Product.html template
+    return render_template('Add_Product.html')
+
+
+@app.route('/Delete_Product.html')
+def delete_product():
+    # Render the Delete_Product.html template
+    return render_template('Delete_Product.html')
 
 
 @app.route('/gloves/makers')
 def gloves_makers():
-    return render_template('G_maker_window.html')
+    data = fetch_data()
+    return render_template('Gloves_maker_window.html', makers=data)
 
 
 @app.route('/order_history')
