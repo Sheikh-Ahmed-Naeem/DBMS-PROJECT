@@ -171,6 +171,25 @@ def delete_item_from_database(item_id):
         conn.close()
 
 
+def fetch_order_history_data():
+    try:
+        # Get database connection settings from database.ini
+        params = config()
+        # Connect to the database
+        conn = psycopg2.connect(**params)
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM Gloves_Order_History ")
+        result = cursor.fetchall()
+        print(result[0])
+        return result
+
+    except (Exception, psycopg2.DatabaseError) as e:
+        print("Error deleting item from the database:", e)
+    finally:
+        cursor.close()
+        conn.close()
+
+
 @app.route('/Home_Page', methods=['POST'])
 def button_click():
     username = request.form['u']
@@ -229,10 +248,11 @@ def gloves_makers():
     return render_template('Gloves_maker_window.html', makers=data)
 
 
-@app.route('/order_history')
+@app.route('/order_history', methods = ['GET', 'POST'])
 def order_history():
-    data = fetch_order_history_data()  
-    return render_template('Gloves_Order_History.html', order_history_data=data)
+    data = fetch_order_history_data()
+    print(data)# Function to fetch data from the Gloves_Order_History table
+    return render_template('Gloves_Order_History.html', data=data)
 
 
 
