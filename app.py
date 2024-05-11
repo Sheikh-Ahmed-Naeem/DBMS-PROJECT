@@ -115,6 +115,26 @@ def fetch_data():
         return None
 
 
+def insert_product(product_name, size, material, colour, description):
+    try:
+        # Get database connection settings from database.ini
+        params = config()
+
+        # Connect to the database
+        conn = psycopg2.connect(**params)
+
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO Gloves (P_name, Size, Material, Colour, Description) VALUES (%s, %s, %s, %s, %s)",
+                       (product_name, size, material, colour, description))
+        conn.commit()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        cursor.close()
+        conn.close()
+
+
+
 @app.route('/Home_Page', methods=['POST'])
 def button_click():
     username = request.form['u']
@@ -136,6 +156,23 @@ def gloves_products():
 def add_product():
     # Render the Add_Product.html template
     return render_template('Add_Product.html')
+
+
+@app.route('/gloves/products', methods=['POST'])
+def save_product():
+    if request.method == 'POST':
+        # Retrieve form data
+        product_name = request.form['product_name']
+        product_id = request.form['product_id']
+        maker = request.form['maker']
+        material = request.form['material']
+        colour = request.form['colour']
+
+        # Insert data into the database
+        insert_product(product_name, product_id, maker, material, colour)
+
+        # Redirect to the Gloves_Product_window.html file
+        return redirect(url_for('gloves_products'))
 
 
 @app.route('/Delete_Product.html')
