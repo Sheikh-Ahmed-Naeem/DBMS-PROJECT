@@ -38,7 +38,7 @@ This project is built using the Flask framework, a lightweight WSGI web applicat
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/your-username/inventory-management-system.git
+    git clone https://github.com/B3TA-BLOCKER/DBMS-PROJECT.git
     ```
 
 2. **Database Setup:**
