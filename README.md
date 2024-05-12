@@ -68,7 +68,7 @@ Since the application is running on localhost, make sure your local server is ru
 ## Contributors 👥
 
 - **Hassaan Ali Bukhari:** `Backend development, HTML login page, CSS modifications, HTML file connections.`
-- **Ammaid:** `Database design and setup, prototype creation of the Project using Figma, data insertion in the Database.`
+- **Ammaid:** `Database design and setup, prototype creation of the Project using Figma, data insertion.`
 - **Ahmad Naeem:** `Basic HTML page creation and Project documentation.`
 
 ## License 📄
