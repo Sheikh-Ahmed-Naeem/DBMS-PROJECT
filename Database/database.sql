@@ -64,6 +64,7 @@ CREATE TABLE Gloves_Order_History (
     Price_Per_Item DECIMAL(10,2),
     Total_Price DECIMAL(10,2) GENERATED ALWAYS AS (Quantity_Delivered * Price_Per_Item) STORED
 );
+--user table for authentication
 CREATE TABLE users(u_name VARCHAR,u_password VARCHAR);
 
 INSERT INTO users(u_name,u_password) VALUES ('user 1','12345'),('user 2','12345'),('user 3','12345');
