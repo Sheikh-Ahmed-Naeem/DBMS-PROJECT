@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 def connect():
     connection = None
-    try:
+    try:    
         params = config()
         connection = psycopg2.connect(**params)
     except (Exception, psycopg2.DatabaseError) as error:
