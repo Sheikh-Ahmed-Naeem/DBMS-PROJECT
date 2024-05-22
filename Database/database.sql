@@ -7,7 +7,7 @@ CREATE TABLE Football (
     Colour VARCHAR(50),
     Description TEXT,
     Picture VARCHAR(255)
-);
+);  
 
 -- Table for Football manufacturer
 CREATE TABLE Football_Maker (
