@@ -14,7 +14,7 @@ def connect():
         print(error)
     finally:
         if connection is not None:
-            connection.close()
+            connection.close()  
 
 
 # routing the application
