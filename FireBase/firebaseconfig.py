@@ -16,7 +16,7 @@ firebaseConfig = {
 }
 
 firebase = pyrebase.initialize_app(firebaseConfig)
-
+           
 db = firebase.database()
 
 @app.route("/test",methods=["GET"])
