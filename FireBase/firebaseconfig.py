@@ -3,7 +3,7 @@ from flask import *
 
                   
 app = Flask(__name__)
-
+                                                                     
 firebaseConfig = {
     "apiKey": "AIzaSyDD_5YYw-MdkABvEvobj-N5qzNhRla7gFY",
     "authDomain": "ambassador-sports.firebaseapp.com",
